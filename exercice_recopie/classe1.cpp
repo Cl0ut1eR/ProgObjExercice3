@@ -10,6 +10,15 @@ Classe1::Classe1(int inValeur, int inNombre, string inPhrase)
 	valeur = inValeur;
 }
 
+Classe1::Classe1(const Classe1& inClass) : objet(inClass.objet)
+{
+	valeur = inClass.getValeur();
+}
+
+Classe1::~Classe1()
+{
+}
+
 int Classe1::getValeur() const
 {
 	return valeur;

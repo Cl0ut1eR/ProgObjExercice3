@@ -9,6 +9,8 @@ private:
 public:
 	Classe4();
 	Classe4(int valeur);
+	Classe4(const Classe4&);
+	~Classe4();
 	int getValeur() const;
 };
 

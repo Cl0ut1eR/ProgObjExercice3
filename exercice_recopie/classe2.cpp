@@ -11,6 +11,21 @@ Classe2::Classe2(int inValeur, int inNombre, string inPhrase)
 	objet = new NouvelleClasse(inNombre, inPhrase);
 }
 
+Classe2::Classe2(const Classe2& inClasse)
+{
+	valeur = inClasse.getValeur();
+	objet = new NouvelleClasse(*(inClasse.objet));
+}
+
+Classe2::~Classe2()
+{
+	if (objet != NULL)
+	{
+		delete objet;
+		objet = NULL;
+	}
+}
+
 int Classe2::getValeur() const
 {
 	return valeur;

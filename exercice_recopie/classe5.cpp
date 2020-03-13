@@ -15,6 +15,35 @@ Classe5::Classe5(int inValeur, int inNombre, string inPhrase)
 	tableauObjet[2] = NULL;
 }
 
+Classe5::Classe5(const Classe5& inClasse)
+{
+	valeur = inClasse.getValeur();
+	int cpt = 0;
+	for (NouvelleClasse* var : inClasse.tableauObjet)
+	{
+		tableauObjet[cpt] = NULL;
+		if (var != NULL)
+		{
+			tableauObjet[cpt] = new NouvelleClasse(*var);
+		}
+		cpt++;
+	}
+}
+
+Classe5::~Classe5()
+{
+	int cpt = 0;
+	for (NouvelleClasse* var : tableauObjet)
+	{
+		if (var != NULL)
+		{
+			delete tableauObjet[cpt];
+			tableauObjet[cpt] = NULL;
+		}
+		cpt++;
+	}
+}
+
 int Classe5::getValeur() const
 {
 	return valeur;

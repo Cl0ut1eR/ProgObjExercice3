@@ -11,6 +11,8 @@ private:
 public:
 	Classe1();
 	Classe1(int valeur, int nombre, string phrase);
+	Classe1(const Classe1&);
+	~Classe1();
 	int getValeur() const;
 	int getNombre() const;
 	string getPhrase() const;
